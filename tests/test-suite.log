@@ -1,0 +1,162 @@
+=========================================
+   libunwind 1.1: tests/test-suite.log
+=========================================
+
+# TOTAL: 33
+# PASS:  25
+# SKIP:  0
+# XFAIL: 2
+# FAIL:  6
+# XPASS: 0
+# ERROR: 0
+
+.. contents:: :depth: 2
+
+XFAIL: Gtest-dyn1
+=================
+
+Too many steps to the signal frame (22)
+XFAIL Gtest-dyn1 (exit status: 255)
+
+XFAIL: Ltest-dyn1
+=================
+
+Too many steps to the signal frame (22)
+XFAIL Ltest-dyn1 (exit status: 255)
+
+FAIL: Gtest-trace
+=================
+
+FAILURE: unw_step() loop and unw_backtrace() depths differ: 5 vs. 4
+FAILURE: detected 4 errors
+FAILURE: unw_step() loop and backtrace() depths differ: 5 vs. 4
+FAILURE: unw_step() loop and unw_backtrace() depths differ: 4 vs. 3
+FAILURE: unw_step() loop and backtrace() depths differ: 4 vs. 3
+FAIL Gtest-trace (exit status: 255)
+
+FAIL: Ltest-trace
+=================
+
+FAILURE: unw_step() loop and unw_backtrace() depths differ: 5 vs. 4
+FAILURE: detected 4 errors
+FAILURE: unw_step() loop and backtrace() depths differ: 5 vs. 4
+FAILURE: unw_step() loop and unw_backtrace() depths differ: 4 vs. 3
+FAILURE: unw_step() loop and backtrace() depths differ: 4 vs. 3
+FAIL Ltest-trace (exit status: 255)
+
+FAIL: test-async-sig
+====================
+
+FAILURE: unw_step() looping over 102 iterations
+FAILURE: unw_step() looping over 102 iterations
+FAILURE: unw_step() looping over 102 iterations
+FAILURE: unw_step() looping over 102 iterations
+FAILURE: detected 4 errors
+FAIL test-async-sig (exit status: 255)
+
+FAIL: test-setjmp
+=================
+
+FAIL test-setjmp (exit status: 134)
+
+FAIL: run-check-namespace
+=========================
+
+  ERROR: Extraneous symbols:
+                 U __stack_chk_fail
+                 U __tls_get_addr
+                 U abort
+                 U close
+                 U dl_iterate_phdr
+                 U free
+                 U fstat
+                 U getpagesize
+                 U getpid
+                 U memcmp
+                 U memmove
+                 U memset
+                 U mincore
+                 U mmap
+                 U msync
+                 U munmap
+                 U open
+                 w pthread_key_create
+                 w pthread_mutex_init
+                 w pthread_mutex_lock
+                 w pthread_mutex_unlock
+                 w pthread_once
+                 w pthread_setspecific
+                 U read
+                 U sigfillset
+                 U sigprocmask
+                 U strlen
+                 U strncpy
+  ERROR: Extraneous symbols:
+                 w _U_dyn_info_list_addr
+                 U _Ux86_64_setcontext
+                 U __stack_chk_fail
+                 U __tls_get_addr
+                 U abort
+                 U calloc
+                 U close
+                 U dl_iterate_phdr
+                 U free
+                 U fstat
+                 U getpagesize
+                 U getpid
+                 U memcmp
+                 U memmove
+                 U memset
+                 U mincore
+                 U mmap
+                 U msync
+                 U munmap
+                 U open
+                 w pthread_key_create
+                 w pthread_mutex_init
+                 w pthread_mutex_lock
+                 w pthread_mutex_unlock
+                 w pthread_once
+                 w pthread_setspecific
+                 U read
+                 U sigfillset
+                 U sigprocmask
+                 U strlen
+                 U strncpy
+FAILURE: Detected 2 errors
+FAIL run-check-namespace (exit status: 1)
+
+FAIL: run-coredump-unwind
+=========================
+
+mktemp: unrecognized option: tmpdir
+BusyBox v1.24.1 (2015-12-16 08:18:45 GMT) multi-call binary.
+
+Usage: mktemp [-dt] [-p DIR] [TEMPLATE]
+
+Create a temporary file with name based on TEMPLATE and print its name.
+TEMPLATE must end with XXXXXX (e.g. [/dir/]nameXXXXXX).
+Without TEMPLATE, -t tmp.XXXXXX is assumed.
+
+	-d	Make directory, not file
+	-q	Fail silently on errors
+	-t	Prepend base directory name to TEMPLATE
+	-p DIR	Use DIR as a base directory (implies -t)
+	-u	Do not create anything; print a name
+
+Base directory is: -p DIR, else $TMPDIR, else /tmp
+cat: can't open '/backing_files': No such file or directory
+lt-test-coredump-unwind: _UCD_create('/core*') failed
+signal:11 address:0x7f0000bed008 ip:0x7f009798a598
+Segmentation fault (core dumped)
+BusyBox v1.24.1 (2015-12-16 08:18:45 GMT) multi-call binary.
+
+Usage: rm [-irf] FILE...
+
+Remove (unlink) FILEs
+
+	-i	Always prompt before removing
+	-f	Never prompt
+	-R,-r	Recurse
+FAIL run-coredump-unwind (exit status: 139)
+
