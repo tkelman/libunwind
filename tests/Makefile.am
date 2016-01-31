@@ -202,7 +202,7 @@ test_setjmp_LDADD = $(LIBUNWIND_setjmp)
 ia64_test_setjmp_LDADD = $(LIBUNWIND_setjmp)
 
 if BUILD_COREDUMP
-test_coredump_unwind_LDADD = $(LIBUNWIND_coredump) $(LIBUNWIND)
+test_coredump_unwind_LDADD = $(LIBUNWIND_coredump) $(LIBUNWIND) @BACKTRACELIB@
 endif
 
 Gia64_test_nat_LDADD = $(LIBUNWIND) $(LIBUNWIND_local)
